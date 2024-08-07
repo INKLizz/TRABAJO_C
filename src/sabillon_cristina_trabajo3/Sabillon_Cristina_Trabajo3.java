@@ -135,7 +135,26 @@ public class Sabillon_Cristina_Trabajo3 {
             int numero = 0, numero_perfecto = 0;
             
             System.out.println("\nNumero Perfecto");
+            while (!input_valido){
+            try{     
+            numero = scan.nextInt();
+                }catch(InputMismatchException e){
+                    System.out.println("Debe de ingresar un numero entero.");
+                    scan.next();
+                }
+            }                  
             
+            for (int index = 1; index <= numero; index++){
+                if (numero % index == 0){
+                    numero_perfecto += index;
+                }
+            }
+            
+            if (numero_perfecto == numero){
+                System.out.println("Numero Perfecto: " + numero_perfecto);
+            }else{
+                System.out.println("Numero no Perfecto: " + numero);
+            }
             
             
         }
